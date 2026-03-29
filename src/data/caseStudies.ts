@@ -7,6 +7,39 @@ export interface CaseStudy {
   tags: string[];
 }
 
+export interface FeaturedCaseStudy {
+  id: string;
+  client: string;
+  industry: string;
+  challenge: string;
+  solution: string;
+  outcomes: string[];
+  technologies: string[];
+}
+
+export const featuredCaseStudy: FeaturedCaseStudy = {
+  id: 'featured-1',
+  client: 'Meridian Partners',
+  industry: 'Professional Services',
+  challenge:
+    'Meridian Partners had accumulated years of valuable domain knowledge through executive talks, leadership presentations, and internal training sessions. That knowledge was locked inside recordings and documents that employees struggled to navigate. Finding a specific answer meant hunting through hours of video or scanning lengthy transcripts — an approach that was slow, inconsistent, and rarely successful.',
+  solution:
+    'We built a chatbot-style knowledge assistant backed by a Retrieval-Augmented Generation (RAG) pipeline. All prior executive talks and presentations were ingested into a searchable vector knowledge base. Users can now ask questions in plain language and receive precise, grounded answers — each response citing the specific talk or document it drew from, so employees always know where the information came from.',
+  outcomes: [
+    'Average time-to-answer reduced from 30+ minutes to under 60 seconds',
+    'Employees self-serve knowledge that previously required scheduling time with executives',
+    'Source citations in every response build trust and allow follow-up exploration',
+    'Knowledge base continuously updated as new talks and materials are added',
+  ],
+  technologies: [
+    'Azure OpenAI (GPT-4)',
+    'Azure AI Search (vector + semantic)',
+    'LangChain RAG pipeline',
+    'Python',
+    'SharePoint integration',
+  ],
+};
+
 export const caseStudies: CaseStudy[] = [
   {
     id: 'cs-1',
