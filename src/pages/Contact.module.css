@@ -1,6 +1,264 @@
-.placeholder {
-  font-size: var(--font-size-lg);
+/* ── Two-column layout ──────────────────────────────────────────── */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: var(--spacing-12);
+  align-items: flex-start;
+}
+
+/* ── Left column — intro ─────────────────────────────────────────── */
+.introTitle {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-4);
+  letter-spacing: -0.02em;
+}
+
+.introBody {
+  font-size: var(--font-size-base);
+  color: var(--color-text-light);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-4);
+}
+
+/* ── Book a conversation card ───────────────────────────────────── */
+.bookCard {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-highlight);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-6);
+  margin-top: var(--spacing-8);
+  margin-bottom: var(--spacing-8);
+}
+
+.bookLabel {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-2);
+}
+
+.bookTitle {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-3);
+}
+
+.bookBody {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-3);
+}
+
+.bookNote {
+  font-size: var(--font-size-sm);
   color: var(--color-text-light);
   font-style: italic;
+}
+
+/* ── Contact details list ───────────────────────────────────────── */
+.contactDetailsTitle {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-3);
+}
+
+.contactDetailsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  list-style: none;
+  padding: 0;
+}
+
+.contactDetailsList li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-3);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+}
+
+.contactIcon {
+  flex-shrink: 0;
+  font-size: var(--font-size-base);
+}
+
+/* ── Right column — form card ───────────────────────────────────── */
+.formColumn {
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-8);
+  box-shadow: var(--shadow-md);
+}
+
+/* ── Early-inquiry notice ───────────────────────────────────────── */
+.earlyNote {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+  line-height: 1.6;
+}
+
+/* ── Form layout ────────────────────────────────────────────────── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.fieldRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-4);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.label {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.required {
+  color: var(--color-highlight);
+}
+
+.input {
+  width: 100%;
+  padding: var(--spacing-3) var(--spacing-4);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--color-text-light);
+  opacity: 0.7;
+}
+
+.input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(15, 52, 96, 0.12);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 140px;
+  line-height: 1.6;
+}
+
+.requiredNote {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-light);
+}
+
+/* ── Submit button ──────────────────────────────────────────────── */
+.submitButton {
+  display: inline-block;
+  background-color: var(--color-highlight);
+  color: var(--color-text-inverse);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  padding: var(--spacing-3) var(--spacing-8);
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+  align-self: flex-start;
+}
+
+.submitButton:hover {
+  opacity: 0.88;
+}
+
+/* ── Success state ──────────────────────────────────────────────── */
+.successCard {
+  text-align: center;
+  padding: var(--spacing-12) var(--spacing-6);
+}
+
+.successIcon {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-4);
+}
+
+.successTitle {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-3);
+}
+
+.successBody {
+  font-size: var(--font-size-base);
+  color: var(--color-text-light);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-8);
+}
+
+.resetButton {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--color-text-light);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.resetButton:hover {
+  border-color: var(--color-text-light);
+  color: var(--color-text);
+}
+
+/* ── Responsive ─────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-8);
+  }
+}
+
+@media (max-width: 640px) {
+  .fieldRow {
+    grid-template-columns: 1fr;
+  }
+
+  .formColumn {
+    padding: var(--spacing-6);
+  }
+
+  .submitButton {
+    width: 100%;
+    text-align: center;
+  }
 }
 
