@@ -4,3 +4,132 @@
   gap: var(--spacing-6);
 }
 
+/* Featured Case Study */
+.featured {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.featuredHeader {
+  background-color: var(--color-primary);
+  padding: var(--spacing-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.featuredIndustry {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-highlight);
+  background-color: rgba(233, 69, 96, 0.15);
+  display: inline-block;
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--radius-sm);
+  align-self: flex-start;
+}
+
+.featuredClient {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  color: var(--color-text-inverse);
+  line-height: 1.2;
+}
+
+.featuredGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.featuredBlock {
+  padding: var(--spacing-8);
+  border-bottom: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.featuredBlock:nth-child(even) {
+  border-right: none;
+}
+
+.featuredBlock:nth-last-child(-n+2) {
+  border-bottom: none;
+}
+
+.featuredBlockTitle {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-highlight);
+}
+
+.featuredBlockBody {
+  font-size: var(--font-size-base);
+  color: var(--color-text-light);
+  line-height: 1.7;
+}
+
+.featuredList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  padding-left: 0;
+}
+
+.featuredListItem {
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  padding-left: var(--spacing-6);
+  position: relative;
+  line-height: 1.5;
+}
+
+.featuredListItem::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-highlight);
+  font-weight: 700;
+}
+
+.featuredTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+}
+
+.featuredTag {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-light);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-1) var(--spacing-3);
+}
+
+@media (max-width: 768px) {
+  .featuredGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .featuredBlock {
+    border-right: none;
+  }
+
+  .featuredBlock:nth-last-child(-n+2) {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .featuredBlock:last-child {
+    border-bottom: none;
+  }
+}
+
