@@ -34,9 +34,10 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id: 'tm-4',
-    name: 'Andrew',
+    name: 'Andrew Fischer',
     title: 'Business Development & Partnerships',
     bio: 'Andrew connects Brentwood AI Factory with the broader business community, identifying opportunities and building lasting partnerships. His focus on client relationships ensures that every engagement starts — and ends — with the right outcomes in mind.',
     expertise: ['Business Development', 'Client Relations', 'Partnerships', 'Strategic Growth'],
+    linkedIn: 'https://www.linkedin.com/in/andrewfischertn/',
   },
 ];
