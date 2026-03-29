@@ -22,6 +22,7 @@
   color: var(--color-text-inverse);
   letter-spacing: -0.02em;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .logoAccent {
@@ -59,17 +60,88 @@
   background-color: rgba(233, 69, 96, 0.25);
 }
 
+/* ── Hamburger button (hidden on desktop) ───────────────────────── */
+.menuToggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-2);
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.menuToggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menuBar {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--color-text-inverse);
+  border-radius: 2px;
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+/* Animated X state */
+.menuBarTopOpen {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menuBarMidOpen {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.menuBarBotOpen {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Mobile styles ──────────────────────────────────────────────── */
 @media (max-width: 640px) {
+  .menuToggle {
+    display: flex;
+  }
+
+  .nav {
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    background-color: var(--color-primary);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height var(--transition-base);
+  }
+
+  .navOpen {
+    max-height: 400px;
+  }
+
   .navList {
+    flex-direction: column;
+    align-items: stretch;
     gap: 0;
+    padding: var(--spacing-2) var(--spacing-4) var(--spacing-4);
   }
 
   .navLink {
-    padding: var(--spacing-2) var(--spacing-2);
-    font-size: var(--font-size-xs);
+    display: block;
+    padding: var(--spacing-3) var(--spacing-4);
+    font-size: var(--font-size-base);
+    border-radius: var(--radius-md);
   }
 
   .logo {
     font-size: var(--font-size-base);
   }
 }
+
