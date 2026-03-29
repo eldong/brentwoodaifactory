@@ -7,6 +7,8 @@ interface HeroSectionProps {
   subtitle: string;
   ctaLabel?: string;
   ctaTo?: string;
+  secondaryCtaLabel?: string;
+  secondaryCtaTo?: string;
 }
 
 export default function HeroSection({
@@ -15,6 +17,8 @@ export default function HeroSection({
   subtitle,
   ctaLabel,
   ctaTo,
+  secondaryCtaLabel,
+  secondaryCtaTo,
 }: HeroSectionProps) {
   return (
     <section className={styles.hero}>
@@ -24,11 +28,20 @@ export default function HeroSection({
           {accentText && <span className={styles.accent}>{accentText}</span>}
         </h1>
         <p className={styles.subtitle}>{subtitle}</p>
-        {ctaLabel && ctaTo && (
-          <Link to={ctaTo} className={styles.cta}>
-            {ctaLabel}
-          </Link>
-        )}
+        {(ctaLabel && ctaTo) || (secondaryCtaLabel && secondaryCtaTo) ? (
+          <div className={styles.ctaRow}>
+            {ctaLabel && ctaTo && (
+              <Link to={ctaTo} className={styles.cta}>
+                {ctaLabel}
+              </Link>
+            )}
+            {secondaryCtaLabel && secondaryCtaTo && (
+              <Link to={secondaryCtaTo} className={styles.ctaSecondary}>
+                {secondaryCtaLabel}
+              </Link>
+            )}
+          </div>
+        ) : null}
       </div>
     </section>
   );
