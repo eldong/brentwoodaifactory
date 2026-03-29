@@ -1,59 +1,59 @@
-.page {
-  width: 100%;
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-6);
 }
 
-.hero {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+.stepList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+  padding-left: 0;
+  list-style: none;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-6);
+}
+
+.stepNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+  background-color: var(--color-highlight);
   color: var(--color-text-inverse);
-  padding: var(--spacing-16) 0;
+  font-size: var(--font-size-base);
+  font-weight: 700;
 }
 
-.heroTitle {
-  font-size: var(--font-size-4xl);
-  font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  margin-bottom: var(--spacing-4);
-}
-
-.accent {
-  color: var(--color-highlight);
-}
-
-.heroSubtitle {
+.stepTitle {
   font-size: var(--font-size-lg);
-  color: rgba(255, 255, 255, 0.8);
-  max-width: 600px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-2);
+}
+
+.stepDescription {
+  font-size: var(--font-size-base);
+  color: var(--color-text-light);
   line-height: 1.6;
 }
 
-.section {
-  padding: var(--spacing-16) 0;
-}
-
-.sectionTitle {
-  font-size: var(--font-size-3xl);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  margin-bottom: var(--spacing-4);
-  color: var(--color-text);
-}
-
-.sectionText {
-  font-size: var(--font-size-lg);
-  color: var(--color-text-light);
-}
-
 @media (max-width: 768px) {
-  .hero {
-    padding: var(--spacing-12) 0;
-  }
-
-  .heroTitle {
-    font-size: var(--font-size-3xl);
-  }
-
-  .section {
-    padding: var(--spacing-12) 0;
+  .cardGrid {
+    grid-template-columns: 1fr;
   }
 }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .cardGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
