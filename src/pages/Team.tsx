@@ -10,14 +10,15 @@ export default function Team() {
   return (
     <div>
       <HeroSection
-        title="Our Team"
-        subtitle="Meet the people behind Brentwood AI Factory — a team of strategists, engineers, and data scientists dedicated to delivering real AI outcomes."
+        title="Meet the "
+        accentText="Brentwood AI Factory Team"
+        subtitle="A close-knit group of Microsoft, Salesforce, data, and business development specialists — focused on making AI work for local businesses."
       />
 
       <SectionWrapper>
         <PageIntro
           title="The People Behind Our Work"
-          subtitle="We combine deep AI expertise with commercial pragmatism to help clients succeed."
+          subtitle="We combine deep platform expertise with practical business knowledge to deliver AI outcomes that actually stick."
         />
         <div className={styles.cardGrid}>
           {teamMembers.map((member) => (
@@ -26,6 +27,8 @@ export default function Team() {
               name={member.name}
               title={member.title}
               bio={member.bio}
+              expertise={member.expertise}
+              linkedIn={member.linkedIn}
             />
           ))}
         </div>

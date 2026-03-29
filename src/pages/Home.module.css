@@ -4,6 +4,42 @@
   gap: var(--spacing-6);
 }
 
+.reasonGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-6);
+}
+
+.reasonCard {
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-8);
+  box-shadow: var(--shadow-sm);
+}
+
+.reasonStat {
+  font-size: var(--font-size-4xl);
+  font-weight: 800;
+  color: var(--color-highlight);
+  line-height: 1;
+  margin-bottom: var(--spacing-3);
+  letter-spacing: -0.03em;
+}
+
+.reasonHeading {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-2);
+}
+
+.reasonBody {
+  font-size: var(--font-size-base);
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
 .stepList {
   display: flex;
   flex-direction: column;
@@ -49,10 +85,18 @@
   .cardGrid {
     grid-template-columns: 1fr;
   }
+
+  .reasonGrid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .cardGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reasonGrid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
