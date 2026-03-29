@@ -1,0 +1,14 @@
+.section {
+  padding: var(--spacing-16) 0;
+  background-color: var(--color-background);
+}
+
+.surface {
+  background-color: var(--color-surface);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--spacing-12) 0;
+  }
+}
